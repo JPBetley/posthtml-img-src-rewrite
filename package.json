@@ -1,6 +1,6 @@
 {
   "name": "posthtml-img-src-rewrite",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Rewrite an img src according to prefix/suffix rules",
   "license": "MIT",
   "repository": "JPBetley/posthtml-img-src-rewrite",
