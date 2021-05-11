@@ -30,6 +30,10 @@ test('no src', t => {
   return compare(t, 'no-src');
 });
 
+test('exclude', t => {
+  return compare(t, 'exclude', {prefix: 'prefix_', suffix: '_suffix', excludeClass: 'exclude'});
+});
+
 async function compare(t, name, options) {
   const source = readFileSync(path.join(fixtures, `${name}.html`), 'utf8');
   const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8');

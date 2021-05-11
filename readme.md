@@ -50,7 +50,7 @@ posthtml()
 
 Pass in the values to be used as the `prefix` and `suffix` of all `<img src>` rewrites.
 
-### Feature
+### Function options
 
 Options allow the use of functions to calculate the values as well.
 
@@ -71,6 +71,41 @@ const imgSrcRewrite = require('posthtml-img-src-rewrite');
 
 posthtml()
     .use(imgSrcRewrite({ prefix: () => 'prefix_', suffix: () => '_suffix' }))
+    .process(html/*, options */)
+    .then(result => fs.writeFileSync('./after.html', result.html));
+```
+
+After:
+``` html
+<html>
+  <body>
+    <img src="images/prefix_test_suffix.png">
+  </body>
+</html>
+```
+
+### Exclusion
+
+Exclude images from rewrite based on class. By default, this class is `img-src-rewrite-exclude`.
+
+Before:
+``` html
+<html>
+  <body>
+    <img src="images/test.png">
+    <img src="images/exclude.png" class="img-src-rewrite-exclude">
+  </body>
+</html>
+```
+
+Add option:
+``` js
+const fs = require('fs');
+const posthtml = require('posthtml');
+const imgSrcRewrite = require('posthtml-img-src-rewrite');
+
+posthtml()
+    .use(imgSrcRewrite({ prefix: () => 'prefix_', suffix: () => '_suffix', excludeClass: 'img-src-rewrite-exclude' }))
     .process(html/*, options */)
     .then(result => fs.writeFileSync('./after.html', result.html));
 ```
