@@ -115,6 +115,7 @@ After:
 <html>
   <body>
     <img src="images/prefix_test_suffix.png">
+    <img src="images/exclude.png" class="img-src-rewrite-exclude">
   </body>
 </html>
 ```
