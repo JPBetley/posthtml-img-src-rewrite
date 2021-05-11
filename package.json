@@ -1,10 +1,10 @@
 {
-  "name": "plugin_name",
-  "version": "0.0.0",
-  "description": "PostHTML plugin description",
+  "name": "posthtml-img-src-rewrite",
+  "version": "0.1.0",
+  "description": "Rewrite an img src according to prefix/suffix rules",
   "license": "MIT",
-  "repository": "USER_NAME/PLUGIN_NAME",
-  "author": "USER_NAME",
+  "repository": "JPBetley/posthtml-img-src-rewrite",
+  "author": "JPBetley",
   "main": "lib",
   "engines": {
     "node": ">=10"
